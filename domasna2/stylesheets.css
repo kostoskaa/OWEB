@@ -1,0 +1,79 @@
+h1 {
+    text-align: center;
+    color: rgb(89, 99, 66);
+    border-style: ridge;
+    border-width: 6px;
+    width: 50%;
+    left: 25%;
+    position: relative;
+    background-color: rgb(226, 201, 164);
+    text-shadow: -4px 1px 6px dimgray;
+}
+
+
+th {
+    background-color: rgb(226, 201, 164);
+    color: rgb(89, 99, 66);
+    padding: 10px;
+    font-size: large;
+  }
+
+td {
+    padding: 5px;
+    background-color: rgb(226, 201, 164);
+    text-align: center;
+}
+
+table {
+    vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-width: 4px;
+    border-style: groove;
+    border-color: rgb(89, 99, 66);
+}
+
+input[type="text"] {
+    background-color: rgb(225, 208, 182);
+    border: none;
+    border-bottom: 1px solid;
+}
+
+textarea {
+    background-color: rgb(225, 208, 182);
+}
+
+select {
+    background-color: rgb(225, 208, 182);
+}
+
+input[type="submit"] {
+    background-color: rgb(89, 99, 66);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+
+}
+
+caption {
+    font-weight: bold;
+    font-size: large;
+    text-decoration: underline;
+}
+
+body {
+    background-image: url(pizzawallpaper.jpg);
+}
+
+h4 {
+    text-align: center;
+    color: rgb(89, 99, 66);
+    border-style: ridge;
+    border-width: 6px;
+    width: 50%;
+    left: 25%;
+    position: relative;
+    background-color: rgb(226, 201, 164);
+}
