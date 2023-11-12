@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<!--Zabeleshki za zadacava:
+Probav java i css da bidat vo razlicni dokumenti, ama bidejki ne mozev da gi iskoristam dvata zaedno 
+(css dizajnot da se implementira na java skriptata), i mojata prva zamisla za igrava ne mozese da bidni,
+gi spoiv vo eden dokument site. Posle sfativ deka nemam vreme da ja napravam mojata prva zamisla za igrava
+pa na kraj go napraviv ova(MNOGU improvizirano) resenie.
+Isto taka, trite random bukvi sto se davaat, cesto se slucuva da se povtoruvaat (edna bukva dva pati ja dava(ne daj Boze tri), 
+a vo zborot ja ima ednas). Treba da ima proverka i resenie za toa, but time is running out
+Se nadevam ke vi se dopadni takva kakva sto e :)
+-->
+<head>
+    
+    <meta charset="utf-8">
+    <title>Domasna3</title>
+    
+    <style type="text/css">
+    h1 {
+        text-align: center;
+        color: rgb(4, 61, 111);
+        background-color: rgb(143, 196, 243);
+        text-shadow: -4px 1px 6px dimgray;
+
+    }
+
+    body, p {
+        text-align: center;
+        color: rgb(4, 61, 111);
+        font-size: large;
+    }
+
+    .button {
+        background-color: rgb(143, 196, 243);
+        border: none;
+        font-size: 16px;
+    }
+    h4 {
+        position: absolute;
+        bottom: 0px;
+        color: rgb(4, 61, 111);
+    }
+    </style>
+    
+</head>
+
+<body>
+    <h1>Welcome to my game!</h1>
+    <p>The rules are simple: I will show you three random letters from an eight letter word and you have to guess what the word is! </p>
+    <p>But you only have five tries to guess the word, so make sure each guess counts!</p>
+
+    <a href="#" onclick="ChooseWord()">Play Game</a>
+    <h4>Made by: Anastasija Kostoska, 143/2021</h4>
+    <script>
+        let word1 = "computer";
+        let word2 = "business";
+        let word3 = "internet";
+        let word4 = "document";
+        let word5 = "firewall";
+        let word6 = "keyboard";
+        let word7 = "learning";
+        let word8 = "operator";
+        let word9 = "progress";
+        let word10 = "protocol";
+        let word11 = "question";
+        let word12 = "practice";
+        let word13 = "symbolic";
+        let word14 = "software";
+        let word15 = "hardware";
+        let word16 = "transfer";
+        let word17 = "teaching";
+        let word18 = "terminal";
+        let word19 = "wireless";
+        let word20 = "variable";
+
+        let allwords = [word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15, word16, word17, word18, word19, word20];
+
+        function start()
+        {
+        var button = document.getElementById( "startbutton" );
+        button.addEventListener( "click", ChooseWord);
+        }
+
+        function ChooseWord()
+        {
+            var chosenwordnumber = Math.floor(Math.random()*19);
+            let chosenword = allwords[chosenwordnumber];
+
+            let letter1 = chosenword.charAt(Math.floor(Math.random()*7));
+            let letter2 = chosenword.charAt(Math.floor(Math.random()*7));
+            let letter3 = chosenword.charAt(Math.floor(Math.random()*7));
+            var i=0;
+
+            while (i<5)
+            {
+                let guess = window.prompt("Guess number " + (i+1)+ "\nYour three letter are: " + letter1 + " " + letter2 + " " + letter3 + "\nPlease guess below"
+                + "\nHint: the word has something to do with IT and FEIT :)");
+                result = CheckWord(guess, chosenword);
+                if (result == 1)
+                {
+                    window.confirm("You have guessed correctly! Congratulations! To play again, click confirm.");
+                    ChooseWord();
+                }
+                i++;
+
+            }
+
+            window.confirm("You didn't guess the word :(\nClick confirm to try again.");
+            ChooseWord();
+            
+        }
+
+        function CheckWord(guessed, chosenword)
+        {
+            if (guessed == chosenword)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
