@@ -22,7 +22,7 @@
 
             <div class="log">
                 <a href="#order" class="naracka">Нарачај</a>
-                <a href="#anketa">Анкета</a>
+                <a href="#anketa" class="mislenje">Анкета</a>
             </div>
         </header>
 
@@ -411,7 +411,34 @@
                 </form>
             </div>
         </div>
-        
+        <div class="survey">
+            <div class="surveyform">
+                <img src="xot.png" alt="x" class="cancel1">
+                <h1>АНКЕТА</h1>
+                <form>
+                    <div class="somislis">
+                        <label>Дали ви се допаѓа страната?
+                            <select name="dopagjanje">
+                                <option>Супер е!</option>
+                                <option>Океј е</option>
+                                <option>Може и подобро</option>
+                                <option>Немам мислење</option>
+                            </select>
+                        </label>
+                        <div class="test">
+                        <label>Дали би ја препорачале нашата пицерија на вашите пријатели?
+                            <select name="preporaka">
+                                <option>ДА</option>
+                                <option>НЕ</option>
+                            </select>
+                        </label></div>
+
+                    </div>
+                    <input type="text" placeholder="КОМЕНТАР ЗА ПОДОБРУВАЊЕ НА СТРАНАТА">
+                    <input type="submit" value="Испрати" class="btn">
+                </form>
+            </div>
+        </div>
 
 
 
@@ -459,17 +486,23 @@
         );
         });
         $(document).on('click', '.naracka', function(){
-        $('.shop').addClass('shop-active');
-    });
+            $('.shop').addClass('shop-active');
+        });
 
-    $(document).on('click','.cancel',function(){
-        $('.shop').removeClass('shop-active');
-    });
+        $(document).on('click','.cancel',function(){
+            $('.shop').removeClass('shop-active');
+        });
 
-    $(document).on('click','.btn',function(){
-        $('.shop').addClass();
-    });
+    
+        $(document).on('click', '.mislenje', function(){
+            $('.survey').addClass('survey-active');
+        });
 
+        $(document).on('click','.cancel1',function(){
+            $('.survey').removeClass('survey-active');
+        });
+
+    
 
 
         </script>
