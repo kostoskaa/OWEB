@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    /* Add CSS for hover effect */
+    #myList li:hover {
+      background-color: green;
+      color: white;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      // Функција за филтрирање на листата
+      $("#myInput").on("input", function() {
+        var filter = $(this).val().toLowerCase();
+        $("#myList li").each(function() {
+          var text = $(this).text().toLowerCase();
+          $(this).toggle(text.indexOf(filter) > -1);
+        });
+      });
+
+      // Додади hover ефект на листата
+      $("#myList li").hover(
+        function() {
+          $(this).css("background-color", "green");
+          $(this).css("color", "white");
+        },
+        function() {
+          // Врати ги наобратно настанатите бои
+          $(this).css("background-color", "");
+          $(this).css("color", "");
+        }
+      );
+    });
+  </script>
+</head>
+<body>
+
+  <h2>Филтирачка листа</h2>
+  <p>Внеси нешто во input полето за да се пребараат излистаните елементи:</p>  
+  <input id="myInput" type="text" placeholder="Search..">
+  <br>
+
+  <ul id="myList">
+    <li>Втор</li>
+    <li>Колоквиум</li>
+    <li>OWEB</li>
+    <li>25.1.2021</li>
+    <li>jquery</li>
+  </ul>
+  
+</body>
+</html>
